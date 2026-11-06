@@ -1,0 +1,52 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.cache/
+
+# Données générées (les originaux métier restent hors de data/)
+data/raw/**
+!data/raw/.gitkeep
+data/processed/**
+!data/processed/.gitkeep
+data/chunks/**
+!data/chunks/.gitkeep
+data/indexes/**
+!data/indexes/.gitkeep
+data/metadata/**
+!data/metadata/.gitkeep
+
+# Secrets et environnement local
+.env
+.env.local
+*.pem
+*.key
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Modèles / caches locaux (T4 plus tard)
+.cache/
+*.pt
+*.bin

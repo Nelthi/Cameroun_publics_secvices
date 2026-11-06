@@ -1,0 +1,6 @@
+# Phase 3 — T1 Orchestrateur et Routage
+Date: 2026-11-06
+Commit: 52c3100
+Contenu: backend/orchestration (route_question), tests, docs
+
+Note: les PDF sources sont dans ../../01_CNI (racine du repo), non dupliques ici.

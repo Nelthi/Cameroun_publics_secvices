@@ -1,0 +1,6 @@
+# Phase 2 — Knowledge Base / T1 Ingestion and Storage
+Date: 2026-11-05
+Commit: 4effd26
+Contenu: collectors, API FastAPI upload, SQLite, tests ingestion
+
+Note: les PDF sources sont dans ../../01_CNI (racine du repo), non dupliques ici.
