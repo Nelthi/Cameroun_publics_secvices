@@ -1,0 +1,13 @@
+{
+  "document_id": "DOC-EXEMPLE-CNI",
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "chunks": [
+    {"chunk_id": "DOC-EXEMPLE-CNI-C001", "position": 0, "source_page": 1,
+     "text": "[EXEMPLE FICTIF] Pièces à fournir pour la première demande de CNI : un acte de naissance, un certificat de nationalité et deux photos d'identité."},
+    {"chunk_id": "DOC-EXEMPLE-CNI-C002", "position": 1, "source_page": 1,
+     "text": "[EXEMPLE FICTIF] Le dépôt du dossier se fait au centre d'identification le plus proche. Le demandeur doit se présenter en personne pour la prise des empreintes."},
+    {"chunk_id": "DOC-EXEMPLE-CNI-C003", "position": 2, "source_page": 2,
+     "text": "[EXEMPLE FICTIF] Les frais de timbre fiscal doivent être payés avant le retrait de la carte. Conservez votre récépissé de dépôt."}
+  ]
+}

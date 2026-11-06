@@ -1,0 +1,11 @@
+{
+  "document_id": "DOC-EXEMPLE-PASSEPORT",
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "chunks": [
+    {"chunk_id": "DOC-EXEMPLE-PASSEPORT-C001", "position": 0, "source_page": 1,
+     "text": "[EXEMPLE FICTIF] La demande de passeport nécessite un formulaire rempli, une copie de la CNI et le paiement des frais correspondants."},
+    {"chunk_id": "DOC-EXEMPLE-PASSEPORT-C002", "position": 1, "source_page": 1,
+     "text": "[EXEMPLE FICTIF] Le délai de délivrance d'un passeport dépend du type de dossier et du centre de traitement."}
+  ]
+}
