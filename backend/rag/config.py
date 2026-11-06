@@ -13,7 +13,7 @@ CHUNKS_DIR = DATA_DIR / "chunks"          # ENTRÉE  : JSON produits par T3
 INDEX_DIR = DATA_DIR / "indexes"          # SORTIE  : index + mapping
 INDEX_PATH = INDEX_DIR / "faiss.index"
 MAPPING_PATH = INDEX_DIR / "chunk_mapping.json"
-
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_NAME = "BAAI/bge-m3"
+# MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 EMBEDDING_DIM = 384
 DEFAULT_TOP_K = 4

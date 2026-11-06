@@ -1,0 +1,32 @@
+{
+  "0": {
+    "chunk_id": "DOC-EXEMPLE-CNI-C001",
+    "document_id": "DOC-EXEMPLE-CNI",
+    "text": "[EXEMPLE FICTIF] Pièces à fournir pour la première demande de CNI : un acte de naissance, un certificat de nationalité et deux photos d'identité.",
+    "source_page": 1
+  },
+  "1": {
+    "chunk_id": "DOC-EXEMPLE-CNI-C002",
+    "document_id": "DOC-EXEMPLE-CNI",
+    "text": "[EXEMPLE FICTIF] Le dépôt du dossier se fait au centre d'identification le plus proche. Le demandeur doit se présenter en personne pour la prise des empreintes.",
+    "source_page": 1
+  },
+  "2": {
+    "chunk_id": "DOC-EXEMPLE-CNI-C003",
+    "document_id": "DOC-EXEMPLE-CNI",
+    "text": "[EXEMPLE FICTIF] Les frais de timbre fiscal doivent être payés avant le retrait de la carte. Conservez votre récépissé de dépôt.",
+    "source_page": 2
+  },
+  "3": {
+    "chunk_id": "DOC-EXEMPLE-PASSEPORT-C001",
+    "document_id": "DOC-EXEMPLE-PASSEPORT",
+    "text": "[EXEMPLE FICTIF] La demande de passeport nécessite un formulaire rempli, une copie de la CNI et le paiement des frais correspondants.",
+    "source_page": 1
+  },
+  "4": {
+    "chunk_id": "DOC-EXEMPLE-PASSEPORT-C002",
+    "document_id": "DOC-EXEMPLE-PASSEPORT",
+    "text": "[EXEMPLE FICTIF] Le délai de délivrance d'un passeport dépend du type de dossier et du centre de traitement.",
+    "source_page": 1
+  }
+}
