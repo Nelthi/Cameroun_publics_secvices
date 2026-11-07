@@ -1,0 +1,181 @@
+[
+  {
+    "question": "Quelles pièces pour faire ma CNI et combien ça coûte ?",
+    "draft": {
+      "request_id": "REQ-MOCK-0001",
+      "agent": "procedure",
+      "answer_draft": "Pour la CNI, il faut un acte de naissance, un certificat de nationalité et 2 photos [1]. Les frais de timbre sont de 2 500 FCFA [2]. Le retrait se fait au centre de dépôt avec le récépissé [2].",
+      "citations": [
+        {
+          "chunk_id": "DOC-MOCK0001-C001",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 1
+        },
+        {
+          "chunk_id": "DOC-MOCK0001-C002",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 2
+        }
+      ],
+      "retrieval": {
+        "top_score": 0.71,
+        "n_chunks": 2
+      }
+    },
+    "passages": [
+      {
+        "chunk_id": "DOC-MOCK0001-C001",
+        "text": "Pièces à fournir pour la CNI : un acte de naissance, un certificat de nationalité et 2 photos d'identité. Le service d'information est joignable au 222 22 22 22."
+      },
+      {
+        "chunk_id": "DOC-MOCK0001-C002",
+        "text": "Les frais de timbre pour la demande de CNI sont de 2 500 FCFA. Le retrait se fait au centre de dépôt sur présentation du récépissé."
+      }
+    ]
+  },
+  {
+    "question": "Quelles pièces pour faire ma CNI ?",
+    "draft": {
+      "request_id": "REQ-MOCK-0002",
+      "agent": "procedure",
+      "answer_draft": "Il faut un acte de naissance et deux photos d'identité. Le dossier se dépose au centre de dépôt.",
+      "citations": [
+        {
+          "chunk_id": "DOC-MOCK0001-C001",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 1
+        },
+        {
+          "chunk_id": "DOC-MOCK0001-C002",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 2
+        }
+      ],
+      "retrieval": {
+        "top_score": 0.68,
+        "n_chunks": 2
+      }
+    },
+    "passages": [
+      {
+        "chunk_id": "DOC-MOCK0001-C001",
+        "text": "Pièces à fournir pour la CNI : un acte de naissance, un certificat de nationalité et 2 photos d'identité. Le service d'information est joignable au 222 22 22 22."
+      },
+      {
+        "chunk_id": "DOC-MOCK0001-C002",
+        "text": "Les frais de timbre pour la demande de CNI sont de 2 500 FCFA. Le retrait se fait au centre de dépôt sur présentation du récépissé."
+      }
+    ]
+  },
+  {
+    "question": "Comment renouveler ma CNI à l'étranger ?",
+    "draft": {
+      "request_id": "REQ-MOCK-0003",
+      "agent": "procedure",
+      "answer_draft": "Le renouvellement se fait dans une ambassade avec un acte de naissance [1].",
+      "citations": [
+        {
+          "chunk_id": "DOC-MOCK0001-C001",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 1
+        }
+      ],
+      "retrieval": {
+        "top_score": 0.21,
+        "n_chunks": 2
+      }
+    },
+    "passages": [
+      {
+        "chunk_id": "DOC-MOCK0001-C001",
+        "text": "Pièces à fournir pour la CNI : un acte de naissance, un certificat de nationalité et 2 photos d'identité. Le service d'information est joignable au 222 22 22 22."
+      },
+      {
+        "chunk_id": "DOC-MOCK0001-C002",
+        "text": "Les frais de timbre pour la demande de CNI sont de 2 500 FCFA. Le retrait se fait au centre de dépôt sur présentation du récépissé."
+      }
+    ]
+  },
+  {
+    "question": "Mon numéro est le 677 12 34 56, où retirer ma carte ?",
+    "draft": {
+      "request_id": "REQ-MOCK-0004",
+      "agent": "procedure",
+      "answer_draft": "Le retrait se fait au centre de dépôt avec le récépissé [2]. Appelez M. Ndi au 677 12 34 56 pour accélérer [1]. Le service d'information est joignable au 222 22 22 22 [1].",
+      "citations": [
+        {
+          "chunk_id": "DOC-MOCK0001-C001",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 1
+        },
+        {
+          "chunk_id": "DOC-MOCK0001-C002",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 2
+        }
+      ],
+      "retrieval": {
+        "top_score": 0.74,
+        "n_chunks": 2
+      }
+    },
+    "passages": [
+      {
+        "chunk_id": "DOC-MOCK0001-C001",
+        "text": "Pièces à fournir pour la CNI : un acte de naissance, un certificat de nationalité et 2 photos d'identité. Le service d'information est joignable au 222 22 22 22."
+      },
+      {
+        "chunk_id": "DOC-MOCK0001-C002",
+        "text": "Les frais de timbre pour la demande de CNI sont de 2 500 FCFA. Le retrait se fait au centre de dépôt sur présentation du récépissé."
+      }
+    ]
+  },
+  {
+    "question": "Qui va gagner le match de football ce soir ?",
+    "draft": {
+      "request_id": "REQ-MOCK-0005",
+      "agent": "orientation",
+      "answer_draft": "Je ne dispose pas d'information à ce sujet dans les documents.",
+      "citations": [],
+      "retrieval": {
+        "top_score": 0.12,
+        "n_chunks": 0
+      }
+    },
+    "passages": []
+  },
+  {
+    "question": "Combien coûte la CNI et en combien de jours ?",
+    "draft": {
+      "request_id": "REQ-MOCK-0006",
+      "agent": "procedure",
+      "answer_draft": "Les frais de timbre sont de 2 500 FCFA [2]. La carte est délivrée en 48 heures [2].",
+      "citations": [
+        {
+          "chunk_id": "DOC-MOCK0001-C001",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 1
+        },
+        {
+          "chunk_id": "DOC-MOCK0001-C002",
+          "document_id": "DOC-MOCK0001",
+          "source_page": 2
+        }
+      ],
+      "retrieval": {
+        "top_score": 0.66,
+        "n_chunks": 2
+      }
+    },
+    "passages": [
+      {
+        "chunk_id": "DOC-MOCK0001-C001",
+        "text": "Pièces à fournir pour la CNI : un acte de naissance, un certificat de nationalité et 2 photos d'identité. Le service d'information est joignable au 222 22 22 22."
+      },
+      {
+        "chunk_id": "DOC-MOCK0001-C002",
+        "text": "Les frais de timbre pour la demande de CNI sont de 2 500 FCFA. Le retrait se fait au centre de dépôt sur présentation du récépissé."
+      }
+    ]
+  }
+]
