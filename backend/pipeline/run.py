@@ -12,9 +12,8 @@ from pathlib import Path
 
 from backend.knowledge_base.collectors import DocumentCollector, DocumentMetadata
 from backend.knowledge_base.processors.processor import DocumentProcessor
-from chunking import chunk_document, validate_output
 
-from .adapters import t2_output_to_t3_input
+from .t2_to_t3 import chunk_from_t2
 
 
 def run_pipeline(source, metadata: DocumentMetadata, data_root="data", embedder=None,
@@ -36,18 +35,10 @@ def run_pipeline(source, metadata: DocumentMetadata, data_root="data", embedder=
     out["processed"] = str(processed_path)
     out["warnings"] = processed.warnings
 
-    # T3 — découpage
-    t3_input = t2_output_to_t3_input(json.loads(processed_path.read_text(encoding="utf-8")))
-    chunks_doc = chunk_document(t3_input)
-    errors = validate_output(chunks_doc)
-    if errors:
-        raise ValueError("Sortie T3 hors contrat : " + " ; ".join(errors))
-    chunks_path = data_root / "chunks" / f"{document_id}.json"
-    chunks_path.parent.mkdir(parents=True, exist_ok=True)
-    chunks_path.write_text(json.dumps(chunks_doc, ensure_ascii=False, indent=2),
-                           encoding="utf-8")
+    # T3 — découpage (liaison T2 -> T3 puis code d'Alex)
+    chunks_path, chunk_count = chunk_from_t2(processed_path, data_root / "chunks")
     out["chunks"] = str(chunks_path)
-    out["chunk_count"] = len(chunks_doc["chunks"])
+    out["chunk_count"] = chunk_count
 
     # T4 — vectorisation et index FAISS
     if build_faiss and out["chunk_count"]:

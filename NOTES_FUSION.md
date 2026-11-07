@@ -15,7 +15,8 @@ Le code de chaque membre est conservé tel quel ; les seuls changements sont lis
 5. `.pyc` et sous-module vide `t3_chunking` retirés du suivi Git.
 6. Nouveau `backend/pipeline/` : relie T1 -> T2 -> T3 -> T4 (sortie T2 `content.segments` -> entrée T3 `pages[]`).
    `python -m backend.pipeline.run fichier.pdf --title ... --institution ... --date 2026-11-04 --domain ... --subdomain ...`
-7. Nouveau `tests/test_pipeline_integration.py`.
+7. Nouveau `backend/pipeline/t2_to_t3.py` : commande de liaison T2 -> T3 (`python -m backend.pipeline.t2_to_t3 DOC-ID`), utilisée aussi par `run.py`.
+8. Nouveau `tests/test_pipeline_integration.py` et `README_LANCEMENT.md` (scénario de démonstration et grille de responsabilités).
 
 À faire côté T4 : `data/indexes/faiss.index` (exemple) est en 384 dimensions, le modèle configuré est BAAI/bge-m3 (1024) :
 reconstruire avec `python -m backend.rag.build_index`.
