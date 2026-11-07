@@ -1,16 +1,21 @@
 # Notes de fusion (chef de projet)
 
-Branches fusionnées : champy (T1), nelson (T2), alex (T3, repush), didier (T4).
+Branches fusionnées : champy (T1), nelson (T2 uniquement), alex (T3, repush), didier (T4).
 Le code de chaque membre est conservé tel quel ; les seuls changements sont listés ci-dessous.
 
-1. `backend/knowledge_base/collectors/` = T1 (champy), nom conforme au guide.
-   Nelson (T2) avait écrit un second module « collectors » (ingestion = travail de T1).
-   Déplacé sans modification de logique vers `collectors_t2/` ; imports corrigés dans
-   `processors/processor.py` et dans ses tests.
-2. `tests/Knowledge_base` (Nelson) -> `tests/knowledge_base/t2` (conflit de casse avec le dossier de T1).
-3. `README.md` et `requirements.txt` fusionnés (union des dépendances). README d'Alex conservé dans `chunking/README.md`.
-4. Fichiers `.pyc` et sous-module vide `t3_chunking` retirés du suivi Git.
-5. Ajout de `backend/pipeline/` (nouveau) : relie T1 -> T2 -> T3 -> T4, car les formats ne se branchaient pas
-   directement (SQLite différents, sortie T2 en `content.segments` au lieu de `pages`).
-   Lancer : `python -m backend.pipeline.run fichier.pdf --title ... --institution ... --date 2026-11-04 --domain ... --subdomain ...`
-6. Ajout de `tests/test_pipeline_integration.py`.
+1. **Nelson : seule la tâche T2 est conservée** (`backend/knowledge_base/processors/`).
+   Ses modules T1 (`collectors`), T3 (`chunkers`), T4 (`embeddings`, `vector_store`), `retrieval` et `rag`
+   sont retirés de `main`. Ils restent consultables sur la branche locale `nelson-t3-t4`.
+2. `processors/processor.py` : une seule ligne modifiée (import). T2 lit maintenant le registre de T1
+   via le nouveau fichier `processors/t1_registry.py` (T2 lisait avant le registre de son propre collector).
+3. `tests/knowledge_base/t2/test_document_processor.py` (ex `tests/Knowledge_base`, renommé pour éviter un conflit de casse) :
+   fixture adaptée au collector de T1 (champ `date`, chemin `data/raw/...`). Les autres tests de Nelson (T1/T3/T4) sont retirés avec leurs modules.
+4. `README.md` et `requirements.txt` fusionnés. README d'Alex conservé dans `chunking/README.md`.
+   `.env.example` (config RAG de Nelson) retiré.
+5. `.pyc` et sous-module vide `t3_chunking` retirés du suivi Git.
+6. Nouveau `backend/pipeline/` : relie T1 -> T2 -> T3 -> T4 (sortie T2 `content.segments` -> entrée T3 `pages[]`).
+   `python -m backend.pipeline.run fichier.pdf --title ... --institution ... --date 2026-11-04 --domain ... --subdomain ...`
+7. Nouveau `tests/test_pipeline_integration.py`.
+
+À faire côté T4 : `data/indexes/faiss.index` (exemple) est en 384 dimensions, le modèle configuré est BAAI/bge-m3 (1024) :
+reconstruire avec `python -m backend.rag.build_index`.

@@ -8,7 +8,7 @@ from typing import Dict, List, Tuple
 from docx import Document as WordDocument
 from pypdf import PdfReader
 
-from ..collectors_t2.repository import DocumentRepository
+from .t1_registry import T1RepositoryForT2 as DocumentRepository
 from .exceptions import (
     DocumentNotFoundError,
     DocumentProcessingError,

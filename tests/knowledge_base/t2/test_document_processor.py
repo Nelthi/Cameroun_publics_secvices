@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from docx import Document as WordDocument
 
-from backend.knowledge_base.collectors_t2 import DocumentCollector, DocumentMetadata
+from backend.knowledge_base.collectors import DocumentCollector, DocumentMetadata
 from backend.knowledge_base.processors import DocumentProcessor, DocumentNotFoundError
 
 
@@ -18,8 +18,7 @@ def setup_kb(tmp_path):
         domain="public_services",
         subdomain="national_identity_card",
         institution="DGSN",
-        document_type="procedure",
-        reliability="official",
+        date="2026-11-04",
     )
     return tmp_path, data_root, collector, processor, metadata
 
@@ -39,7 +38,7 @@ def test_process_txt_and_save_json(setup_kb):
     payload = json.loads(output.read_text(encoding="utf-8"))
     assert payload["content"]["text"] == "Première ligne\n\nDeuxième ligne"
     assert payload["source"]["sha256"] == imported.sha256
-    assert (data_root / imported.stored_path).exists()  # l'original est conservé
+    assert (tmp_path / imported.stored_path).exists()  # l'original est conservé (chemin T1 : data/raw/...)
 
 
 def test_process_docx_including_table(setup_kb):

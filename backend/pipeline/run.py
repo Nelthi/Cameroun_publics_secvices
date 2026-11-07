@@ -14,7 +14,7 @@ from backend.knowledge_base.collectors import DocumentCollector, DocumentMetadat
 from backend.knowledge_base.processors.processor import DocumentProcessor
 from chunking import chunk_document, validate_output
 
-from .adapters import T1RepositoryForT2, t2_output_to_t3_input
+from .adapters import t2_output_to_t3_input
 
 
 def run_pipeline(source, metadata: DocumentMetadata, data_root="data", embedder=None,
@@ -28,10 +28,9 @@ def run_pipeline(source, metadata: DocumentMetadata, data_root="data", embedder=
     document_id = imported.document_id
     out = {"document_id": document_id, "duplicate": imported.is_duplicate}
 
-    # T2 — extraction et nettoyage (lit le registre de T1 via un adaptateur)
+    # T2 — extraction et nettoyage (lit directement le registre de T1)
     processor = DocumentProcessor(data_root=data_root,
                                   database_path=collector.database_path)
-    processor.repository = T1RepositoryForT2(collector.repository)
     processed = processor.process_document(document_id)
     processed_path = data_root / processed.output_path
     out["processed"] = str(processed_path)
