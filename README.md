@@ -406,3 +406,13 @@ python -m pytest tests/knowledge_base -v
 
 Les tests du RAG utilisent un Retriever et un LLM factices : ils vérifient le flux,
 les références et l'abstention sans appel réseau ni clé API.
+
+## T3 — Découpage (Chunking)
+
+Module `chunking/` à la racine du projet (code d'Alex, voir `chunking/README.md` pour le détail du contrat).
+Depuis la racine du projet :
+
+```bash
+python -m chunking examples/input_t2_example.json --out-dir data/chunks
+python -m chunking.validate data/chunks/<document_id>.json
+```
