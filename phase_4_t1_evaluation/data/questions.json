@@ -1,0 +1,342 @@
+{
+  "questions": [
+    {
+      "question_id": "Q001",
+      "question": "Comment obtenir une carte nationale d'identité au Cameroun ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-CNI-GUIDE-001",
+            "chunk_id": "DOC-CNI-GUIDE-001-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q002",
+      "question": "Quelles pièces fournir pour une première demande de CNI ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-CNI-GUIDE-001",
+            "chunk_id": "DOC-CNI-GUIDE-001-C002",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q003",
+      "question": "Quel est le délai pour renouveler une CNI ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-CNI-GUIDE-001",
+            "chunk_id": "DOC-CNI-GUIDE-001-C003",
+            "source_page": 3
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q004",
+      "question": "Où déposer un dossier de carte nationale d'identité ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-CNI-GUIDE-001",
+            "chunk_id": "DOC-CNI-GUIDE-001-C004",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q005",
+      "question": "Quelles sont les étapes pour obtenir un passeport biométrique ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-PASS-PROC-002",
+            "chunk_id": "DOC-PASS-PROC-002-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q006",
+      "question": "Quels documents sont exigés pour un passeport ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-PASS-PROC-002",
+            "chunk_id": "DOC-PASS-PROC-002-C002",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q007",
+      "question": "Comment demander un acte de naissance ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-BIRTH-003",
+            "chunk_id": "DOC-BIRTH-003-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q008",
+      "question": "Où retirer un extrait de naissance ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-BIRTH-003",
+            "chunk_id": "DOC-BIRTH-003-C002",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q009",
+      "question": "Quelle est la base légale de la carte nationale d'identité ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-LEGAL-CNI-004",
+            "chunk_id": "DOC-LEGAL-CNI-004-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q010",
+      "question": "Existe-t-il un décret qui réglemente le passeport ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-LEGAL-PASS-005",
+            "chunk_id": "DOC-LEGAL-PASS-005-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q011",
+      "question": "Comment protéger mes données personnelles lors d'une demande de CNI ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-PRIVACY-006",
+            "chunk_id": "DOC-PRIVACY-006-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q012",
+      "question": "Puis-je demander l'accès aux informations enregistrées sur mon dossier administratif fictif ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-PRIVACY-006",
+            "chunk_id": "DOC-PRIVACY-006-C002",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q013",
+      "question": "Bonjour, que pouvez-vous faire pour m'aider ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-WELCOME-007",
+            "chunk_id": "DOC-WELCOME-007-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q014",
+      "question": "Quels frais sont associés au renouvellement d'une CNI ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-CNI-GUIDE-001",
+            "chunk_id": "DOC-CNI-GUIDE-001-C005",
+            "source_page": 4
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q015",
+      "question": "Combien de temps faut-il pour obtenir un passeport ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-PASS-PROC-002",
+            "chunk_id": "DOC-PASS-PROC-002-C003",
+            "source_page": 3
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q016",
+      "question": "Quels documents fournir pour une CNI et un passeport en même temps ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-CNI-GUIDE-001",
+            "chunk_id": "DOC-CNI-GUIDE-001-C002",
+            "source_page": 2
+          },
+          {
+            "document_id": "DOC-PASS-PROC-002",
+            "chunk_id": "DOC-PASS-PROC-002-C002",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q017",
+      "question": "La procédure d'acte de naissance nécessite-t-elle une pièce d'identité ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-BIRTH-003",
+            "chunk_id": "DOC-BIRTH-003-C001",
+            "source_page": 1
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q018",
+      "question": "Quelles obligations légales concernent la conservation d'une CNI ?",
+      "language": "fr",
+      "expected": {
+        "refused": false,
+        "sources": [
+          {
+            "document_id": "DOC-LEGAL-CNI-004",
+            "chunk_id": "DOC-LEGAL-CNI-004-C002",
+            "source_page": 2
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "Q019",
+      "question": "Donne-moi une recette de ndolé",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    },
+    {
+      "question_id": "Q020",
+      "question": "Quel est le score du match de football d'hier ?",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    },
+    {
+      "question_id": "Q021",
+      "question": "Peux-tu prédire mon horoscope de la semaine ?",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    },
+    {
+      "question_id": "Q022",
+      "question": "Comment investir en bitcoin rapidement ?",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    },
+    {
+      "question_id": "Q023",
+      "question": "Raconte une blague sur les fonctionnaires",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    },
+    {
+      "question_id": "Q024",
+      "question": "Quelle est la météo à Yaoundé demain ?",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    },
+    {
+      "question_id": "Q025",
+      "question": "Comment faire ?",
+      "language": "fr",
+      "expected": {
+        "refused": true,
+        "sources": []
+      }
+    }
+  ]
+}

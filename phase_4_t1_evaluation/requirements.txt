@@ -1,0 +1,5 @@
+# Dépendances du module Phase 4 T1 (évaluation)
+# httpx est déjà présent dans le requirements du monorepo si fusionné.
+
+httpx>=0.27.0,<1.0
+pytest>=8.0,<10.0

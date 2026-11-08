@@ -1,0 +1,28 @@
+# Phase 4 — T1 Jeu de test et Évaluation
+Responsable : Champy (équipe HEMLE)
+Branche de travail : champy
+Périmètre exclusif : ce dossier phase_4_t1_evaluation/ (module evaluation/)
+
+## Règles
+- Ne pas modifier main.
+- Ne pas modifier phase_2/ ni phase_3/ sans autorisation.
+- Ne pas développer T2/T3/T4 Phase 4 ici.
+
+## État — LIVRABLE COMPLET
+- Étape 0 (cadre) : FAIT
+- Étape 1 (modèles + validation questions.json) : FAIT
+- Étape 2 (jeu 25 questions fictives) : FAIT
+- Étape 3 (client HTTP /ask + mock) : FAIT
+- Étape 4 (comparaison + métriques) : FAIT
+- Étape 5 (rapports JSON/CSV + runner) : FAIT
+- Étape 6 (tests + doc Ubuntu) : FAIT
+
+## Doc
+- docs/phase4_t1_evaluation.md
+- docs/ETAPE_0_CADRE.md
+
+## Vérification locale
+cd phase_4_t1_evaluation
+source ../.venv/bin/activate
+python -m pytest tests/evaluation -v
+EVAL_ASK_MODE=mock python -m evaluation.cli --run-id check
