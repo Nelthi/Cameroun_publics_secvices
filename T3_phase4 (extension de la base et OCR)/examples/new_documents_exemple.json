@@ -1,0 +1,8 @@
+[
+  {"path": "documents_test/bareme_frais_scan.pdf", "title": "Barème des frais (scan, document de test)",
+   "institution": "DGSN (document de test)", "domain": "public_services", "subdomain": "national_identity_card",
+   "date": "2026-11-10", "source_url": "https://exemple.invalide/bareme", "gap_ids": ["GAP-001"]},
+  {"path": "documents_test/guide_permis.pdf", "title": "Guide permis (document de test)",
+   "institution": "à confirmer", "domain": "public_services", "subdomain": "driving_licence",
+   "date": "2026-11-10", "source_url": "https://exemple.invalide/permis", "gap_ids": ["GAP-002"]}
+]

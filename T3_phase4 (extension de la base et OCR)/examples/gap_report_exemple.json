@@ -1,0 +1,12 @@
+{
+  "report_date": "2026-11-12T10:00:00",
+  "n_gaps": 3,
+  "gaps": [
+    {"gap_id": "GAP-001", "topic": "frais de la CNI", "domain": "public_services", "occurrences": 6,
+     "source": "audit", "suggested_document": "barème des frais", "suggested_institution": "à confirmer"},
+    {"gap_id": "GAP-002", "topic": "renouvellement du permis de conduire", "domain": "public_services", "occurrences": 4,
+     "source": "audit", "suggested_document": "guide de procédure", "suggested_institution": "à confirmer"},
+    {"gap_id": "GAP-003", "topic": "horaires des guichets", "domain": "public_services", "occurrences": 2,
+     "source": "eval", "suggested_document": "note de service", "suggested_institution": "à confirmer"}
+  ]
+}

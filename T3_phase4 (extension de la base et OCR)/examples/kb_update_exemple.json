@@ -1,0 +1,25 @@
+{
+  "update_date": "2026-11-08T12:13:05",
+  "gaps_addressed": [
+    "GAP-001",
+    "GAP-002"
+  ],
+  "documents_added": [
+    {
+      "document_id": "DOC-62B1FCA5",
+      "institution": "DGSN (document de test)",
+      "ocr_used": true
+    },
+    {
+      "document_id": "DOC-CB2AE833",
+      "institution": "à confirmer",
+      "ocr_used": false
+    }
+  ],
+  "index": {
+    "n_chunks_before": 0,
+    "n_chunks_after": 2,
+    "dim": null
+  },
+  "status": "indexed"
+}
