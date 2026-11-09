@@ -1,0 +1,62 @@
+{
+  "run_id": "EVAL-20261112-01",
+  "n_questions": 25,
+  "metrics": {
+    "source_hit_rate": 0.84,
+    "correct_refusal_rate": 0.9,
+    "avg_duration_ms": 4200
+  },
+  "failures": [
+    {
+      "question_id": "Q03",
+      "expected": {
+        "document_id": "DOC-MOCKCNI",
+        "page": 2
+      },
+      "got": "refused",
+      "request_id": "REQ-20261110-0003"
+    },
+    {
+      "question_id": "Q07",
+      "expected": "refused",
+      "got": "approved",
+      "request_id": "REQ-20261112-0007"
+    },
+    {
+      "question_id": "Q11",
+      "expected": {
+        "document_id": "DOC-MOCKCNI",
+        "page": 1
+      },
+      "got": "approved",
+      "request_id": "REQ-20261112-0011"
+    },
+    {
+      "question_id": "Q15",
+      "expected": {
+        "document_id": "DOC-MOCKPERMIS",
+        "page": 1
+      },
+      "got": "partial",
+      "request_id": "REQ-20261112-0015"
+    },
+    {
+      "question_id": "Q19",
+      "expected": {
+        "document_id": "DOC-MOCKPASS",
+        "page": 3
+      },
+      "got": "refused",
+      "request_id": null
+    },
+    {
+      "question_id": "Q22",
+      "expected": {
+        "document_id": "DOC-MOCKCNI",
+        "page": 2
+      },
+      "got": "refused",
+      "request_id": "REQ-20261112-0022"
+    }
+  ]
+}

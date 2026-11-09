@@ -1,0 +1,334 @@
+{
+  "report_date": "2026-11-12T10:00:00",
+  "n_gaps": 8,
+  "gaps": [
+    {
+      "gap_id": "GAP-001",
+      "topic": "frais CNI",
+      "topic_key": "national_identity_card:cni-frais",
+      "domain": "public_services",
+      "subdomain": "national_identity_card",
+      "occurrences": 4,
+      "source": "audit+eval",
+      "suggested_document": "barème des frais",
+      "suggested_institution": "DGSN (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 4,
+        "eval_occurrences": 0,
+        "eval_failures": 1,
+        "reasons": {
+          "low_score": 1,
+          "no_relevant_chunk": 3
+        },
+        "failure_types": {
+          "source_missing": 1
+        },
+        "example_questions": [
+          "Quels sont les frais pour la CNI ?",
+          "Quel est le coût de la carte nationale d'identité ?",
+          "frais cni svp"
+        ],
+        "request_ids": [
+          "REQ-20261110-0003",
+          "REQ-20261110-0004",
+          "REQ-20261110-0005",
+          "REQ-20261110-0010"
+        ],
+        "question_ids": [
+          "Q03"
+        ],
+        "first_seen": "2026-11-10T10:00:00",
+        "last_seen": "2026-11-10T13:30:00"
+      }
+    },
+    {
+      "gap_id": "GAP-002",
+      "topic": "coût du permis",
+      "topic_key": "driving_license:frais-permi",
+      "domain": "public_services",
+      "subdomain": "driving_license",
+      "occurrences": 3,
+      "source": "audit+eval",
+      "suggested_document": "barème des frais",
+      "suggested_institution": "à confirmer",
+      "evidence": {
+        "audit_occurrences": 2,
+        "eval_occurrences": 1,
+        "eval_failures": 1,
+        "reasons": {
+          "no_relevant_chunk": 2
+        },
+        "failure_types": {
+          "partial_answer": 1
+        },
+        "example_questions": [
+          "Combien coûte le permis de conduire pour un étudiant ?",
+          "Quels sont les frais du permis de conduire ?",
+          "Combien coûte le permis de conduire ?"
+        ],
+        "request_ids": [
+          "REQ-20261112-0015",
+          "REQ-20261110-0002",
+          "REQ-20261110-0001"
+        ],
+        "question_ids": [
+          "Q15"
+        ],
+        "first_seen": "2026-11-10T09:00:00",
+        "last_seen": "2026-11-10T09:30:00"
+      }
+    },
+    {
+      "gap_id": "GAP-003",
+      "topic": "Quels documents pour le renouvellement de la CNI ?",
+      "topic_key": "national_identity_card:cni-pieces-renouvellement",
+      "domain": "public_services",
+      "subdomain": "national_identity_card",
+      "occurrences": 1,
+      "source": "eval",
+      "suggested_document": "liste officielle des pièces à fournir",
+      "suggested_institution": "DGSN (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 0,
+        "eval_occurrences": 1,
+        "eval_failures": 1,
+        "reasons": {},
+        "failure_types": {
+          "wrong_source": 1
+        },
+        "example_questions": [
+          "Quels documents pour le renouvellement de la CNI ?"
+        ],
+        "request_ids": [
+          "REQ-20261112-0011"
+        ],
+        "question_ids": [
+          "Q11"
+        ],
+        "first_seen": null,
+        "last_seen": null
+      }
+    },
+    {
+      "gap_id": "GAP-004",
+      "topic": "Où déposer ma demande de passeport ?",
+      "topic_key": "passport:lieu-demand-passeport",
+      "domain": "public_services",
+      "subdomain": "passport",
+      "occurrences": 1,
+      "source": "eval",
+      "suggested_document": "liste des centres ou postes avec adresses et horaires",
+      "suggested_institution": "DGSN (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 0,
+        "eval_occurrences": 1,
+        "eval_failures": 1,
+        "reasons": {},
+        "failure_types": {
+          "source_missing": 1
+        },
+        "example_questions": [
+          "Où déposer ma demande de passeport ?"
+        ],
+        "request_ids": [],
+        "question_ids": [
+          "Q19"
+        ],
+        "first_seen": null,
+        "last_seen": null
+      }
+    },
+    {
+      "gap_id": "GAP-005",
+      "topic": "loi sur les données personnelles",
+      "topic_key": "personal_data_protection:donnees-texte-personnell",
+      "domain": "public_services",
+      "subdomain": "personal_data_protection",
+      "occurrences": 1,
+      "source": "audit",
+      "suggested_document": "texte sur la protection des données personnelles",
+      "suggested_institution": "Présidence de la République (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 1,
+        "eval_occurrences": 0,
+        "eval_failures": 0,
+        "reasons": {
+          "no_relevant_chunk": 1
+        },
+        "failure_types": {},
+        "example_questions": [
+          "Mes données sont-elles protégées par la loi ?"
+        ],
+        "request_ids": [
+          "REQ-20261110-0009"
+        ],
+        "question_ids": [],
+        "first_seen": "2026-11-10T13:00:00",
+        "last_seen": "2026-11-10T13:00:00"
+      }
+    },
+    {
+      "gap_id": "GAP-006",
+      "topic": "impôt sur le revenu : délais de déclaration",
+      "topic_key": "taxes:delai-declaration-impot-revenu",
+      "domain": "public_services",
+      "subdomain": "taxes",
+      "occurrences": 1,
+      "source": "audit",
+      "suggested_document": "texte ou note officielle fixant les délais",
+      "suggested_institution": "MINFI / Direction Générale des Impôts (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 1,
+        "eval_occurrences": 0,
+        "eval_failures": 0,
+        "reasons": {
+          "no_relevant_chunk": 1
+        },
+        "failure_types": {},
+        "example_questions": [
+          "Quand déclarer mes impôts sur le revenu ?"
+        ],
+        "request_ids": [
+          "REQ-20261110-0008"
+        ],
+        "question_ids": [],
+        "first_seen": "2026-11-10T12:30:00",
+        "last_seen": "2026-11-10T12:30:00"
+      }
+    },
+    {
+      "gap_id": "GAP-007",
+      "topic": "acte de naissance copie intégrale",
+      "topic_key": "civil_status:acte-copi-integral-naissanc",
+      "domain": "public_services",
+      "subdomain": "civil_status",
+      "occurrences": 1,
+      "source": "audit",
+      "suggested_document": "fiche officielle décrivant la procédure",
+      "suggested_institution": "Mairies (état civil) (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 1,
+        "eval_occurrences": 0,
+        "eval_failures": 0,
+        "reasons": {
+          "no_relevant_chunk": 1
+        },
+        "failure_types": {},
+        "example_questions": [
+          "Comment obtenir une copie intégrale d'acte de naissance ?"
+        ],
+        "request_ids": [
+          "REQ-20261110-0007"
+        ],
+        "question_ids": [],
+        "first_seen": "2026-11-10T12:00:00",
+        "last_seen": "2026-11-10T12:00:00"
+      }
+    },
+    {
+      "gap_id": "GAP-008",
+      "topic": "délai de délivrance du passeport",
+      "topic_key": "passport:delai-delivranc-passeport",
+      "domain": "public_services",
+      "subdomain": "passport",
+      "occurrences": 1,
+      "source": "audit",
+      "suggested_document": "texte ou note officielle fixant les délais",
+      "suggested_institution": "DGSN (à confirmer)",
+      "evidence": {
+        "audit_occurrences": 1,
+        "eval_occurrences": 0,
+        "eval_failures": 0,
+        "reasons": {
+          "no_relevant_chunk": 1
+        },
+        "failure_types": {},
+        "example_questions": [
+          "Quel est le délai pour avoir mon passeport ?"
+        ],
+        "request_ids": [
+          "REQ-20261110-0006"
+        ],
+        "question_ids": [],
+        "first_seen": "2026-11-10T11:30:00",
+        "last_seen": "2026-11-10T11:30:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_occurrences": 13,
+    "by_subdomain": {
+      "national_identity_card": {
+        "n_gaps": 2,
+        "occurrences": 5
+      },
+      "driving_license": {
+        "n_gaps": 1,
+        "occurrences": 3
+      },
+      "passport": {
+        "n_gaps": 2,
+        "occurrences": 2
+      },
+      "personal_data_protection": {
+        "n_gaps": 1,
+        "occurrences": 1
+      },
+      "taxes": {
+        "n_gaps": 1,
+        "occurrences": 1
+      },
+      "civil_status": {
+        "n_gaps": 1,
+        "occurrences": 1
+      }
+    }
+  },
+  "inputs": {
+    "audit": {
+      "kind": "audit_db",
+      "path": "gaps/examples/mock_audit.db",
+      "rows": 10,
+      "observations": 10,
+      "skipped_before_since": 0,
+      "skipped_empty_topic": 0,
+      "audit_log_requests": 10
+    },
+    "eval": {
+      "path": "gaps/examples/mock_eval_report.json",
+      "run_id": "EVAL-20261112-01",
+      "n_failures": 6,
+      "n_malformed_failures": 0
+    }
+  },
+  "ignored_failures": [
+    {
+      "question_id": "Q07",
+      "request_id": "REQ-20261112-0007",
+      "expected": "refused",
+      "got": "approved",
+      "failure_type": "unexpected_answer",
+      "reason": "refus attendu mais réponse donnée : problème de garde-fous, pas de document manquant"
+    },
+    {
+      "question_id": "Q22",
+      "request_id": "REQ-20261112-0022",
+      "expected": {
+        "document_id": "DOC-MOCKCNI",
+        "page": 2
+      },
+      "got": "refused",
+      "failure_type": "source_missing",
+      "reason": "texte de la question introuvable (ni dans audit_log, ni dans questions.json)"
+    }
+  ],
+  "warnings": [
+    "1 échec(s) d'évaluation écarté(s) faute de texte de question (fournir --questions ou un audit_log)"
+  ],
+  "parameters": {
+    "since": null,
+    "similarity": 0.6,
+    "count_unexpected_answers": false,
+    "source": "auto"
+  }
+}
