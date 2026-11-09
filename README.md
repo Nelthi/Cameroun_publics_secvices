@@ -196,3 +196,18 @@ Depuis la racine du projet :
 python -m chunking examples/input_t2_example.json --out-dir data/chunks
 python -m chunking.validate data/chunks/<document_id>.json
 ```
+
+## Phase 3 — Agents, Guardrails et API
+
+Chemin d'une question : **API (T4)** → **T1 routage** → **T2 agents** (appellent `search()` de la Phase 2 et un LLM) → **T3 guardrails** → **T4 réponse + journal d'audit**.
+
+| Tâche | Dossier | Rôle |
+|---|---|---|
+| T1 Orchestrateur et routage | `backend/orchestration/` | intention, domaine, agents à appeler (`route_question`) — docs : `docs/phase3_t1_orchestration.md` |
+| T2 Agents spécialisés | `backend/agents/` | un brouillon sourcé par agent (`run_agents`, `merge_drafts`, `llm_generate`) — `docs/README_T2.md`, `docs/RAPPORT_T2.md` |
+| T3 Guardrails et lacunes | `guardrails/` | vérifie, masque les données sensibles, refuse ou valide (`verifier_brouillon`) — `guardrails/README.md` |
+| T4 API, audit et interface | `app/` et `ui/` | `POST /ask`, audit SQLite, lacunes, Streamlit — `docs/README_P3_T4.md`, `docs/RAPPORT_P3_T4.md` |
+| Liaison de la fusion | `backend/pipeline/phase3.py`, `serve.py` | branche T1, T2, T3 sur les signatures attendues par T4 |
+
+Lancement et démonstration : voir `README_LANCEMENT.md` (partie « Phase 3 »).
+

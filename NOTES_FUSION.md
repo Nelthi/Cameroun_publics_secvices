@@ -20,3 +20,18 @@ Le code de chaque membre est conservé tel quel ; les seuls changements sont lis
 
 À faire côté T4 : `data/indexes/faiss.index` (exemple) est en 384 dimensions, le modèle configuré est BAAI/bge-m3 (1024) :
 reconstruire avec `python -m backend.rag.build_index`.
+
+## Phase 3
+
+Livrables fusionnés (code des membres inchangé) :
+- T1 `backend/orchestration/` + `tests/orchestration/` + docs ; T2 `backend/agents/` + `tests/agents/` + `examples/t2/` + `llm.env.example` ;
+  T3 `guardrails/` (README dans le dossier, exemples dans `examples/t3/` au lieu de `examples/`) ; T4 `app/`, `ui/`, `tests/test_t4_api.py`.
+- Rapports et README des membres : `docs/` (`README_T2.md`, `RAPPORT_T2.md`, `README_P3_T4.md`, `RAPPORT_P3_T4.md`, docs de T1).
+- Le dossier `phase_3/` de T1 contenait aussi une copie du squelette de la Partie 2 : non repris (identique à la fusion, sauf `processors/__init__.py`, où la version de la Partie 2 est conservée).
+
+Ajouts de la fusion :
+- `backend/pipeline/phase3.py` : adaptateurs vers les signatures de `app/stages.py` (T2 renvoie une liste de brouillons, fusionnée par son `merge_drafts` ; T3 reçoit les passages depuis `retrieval.passages`) + mode démonstration sans LLM (`PHASE3_LLM=demo`).
+- `backend/pipeline/serve.py` : lance l'API de T4 branchée sur les vraies tâches.
+- `tests/test_phase3_integration.py` : API -> T1 -> T2 -> T3 -> audit, sur le vrai document de la Partie 2.
+- `requirements.txt` (streamlit, requests, pydantic) et `.gitignore` (`data/audit.db`, `data/validated/`).
+

@@ -263,4 +263,115 @@ Si `main` existe déjà sur GitHub avec un autre historique : `git pull origin m
 
 ---
 
+---
+---
+
+# PARTIE 3 : de la question du citoyen à la réponse sourcée
+
+Cette partie suppose la **Partie 2 faite** (sections 0 à 5 ci-dessus) : un document téléversé, découpé, et un **index construit avec bge-m3** (`python -m backend.rag.build_index`). Sans index, les agents n'ont rien à chercher et toutes les questions sont refusées.
+
+```
+ Citoyen ─► T4 API (POST /ask) ─► T1 routage ─► T2 agents ─► T3 guardrails ─► T4 réponse + audit
+ Streamlit    crée REQ-...        intention,     search()      vérifie, masque    + sources + lacunes
+                                  agents         + LLM         refuse / valide
+```
+
+## P3.0 Préparation
+
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt          # ajoute streamlit et requests
+python -m pytest -q                      # attendu : 271 passed, 1 skipped (Partie 2 + Partie 3)
+```
+
+## P3.1 Choisir le LLM (T2)
+
+T2 appelle un seul point d'entrée, `llm_generate(prompt)`. **Aucun LLM n'est choisi par l'équipe pour l'instant**, il faut donc en configurer un, par variables d'environnement (détail dans `llm.env.example`) :
+
+| Option | Commandes |
+|---|---|
+| **Test sans LLM** (réponse recopiée depuis le passage le plus proche, pas de génération) | aucune : utiliser `--demo-llm` à l'étape suivante |
+| **Ollama en local** (gratuit, hors ligne) | `export LLM_PROVIDER=openai_compatible LLM_MODEL=<modèle> LLM_BASE_URL=http://localhost:11434/v1` |
+| **API payante** | `export LLM_PROVIDER=openai_compatible LLM_MODEL=<modèle> LLM_API_KEY=<clé>` ou `LLM_PROVIDER=anthropic` + `LLM_MODEL` + `LLM_API_KEY` |
+
+Le mode démonstration permet de présenter toute la chaîne, mais il ne **génère** rien : à ne pas présenter comme la réponse finale du projet.
+
+## P3.2 Lancer l'API (T4 branchée sur T1, T2 et T3)
+
+```bash
+python -m backend.pipeline.serve --demo-llm        # ou, avec un vrai LLM configuré : python -m backend.pipeline.serve
+```
+
+Le lanceur affiche quelles tâches sont branchées, par exemple :
+
+```
+T1 : backend.pipeline.phase3:route_question
+T2 : backend.pipeline.phase3:run_agents
+T3 : backend.pipeline.phase3:validate_answer
+LLM : DÉMO sans LLM (...)
+```
+
+**Ne pas lancer `uvicorn app.main:app` directement** : T4 utiliserait alors ses faux T1, T2 et T3 (`app/mocks.py`) et répondrait avec un document bidon `DOC-EXEMPLE-CNI`. Si tu vois ce nom dans une réponse, ce sont les faux.
+
+Page de test : http://127.0.0.1:8000/docs. Deuxième terminal pour l'interface :
+
+```bash
+source .venv/bin/activate && streamlit run ui/streamlit_app.py      # http://localhost:8501
+```
+
+## P3.3 Poser des questions et suivre le parcours
+
+Exemples (document de la Partie 2 : la plaquette CNI). Dans Streamlit ou :
+
+```bash
+curl -s -X POST http://127.0.0.1:8000/ask -H "Content-Type: application/json" \
+  -d '{"question": "Comment faire le pré-enrôlement en ligne pour la CNI ?"}'
+```
+
+| Question | Résultat attendu |
+|---|---|
+| `Comment faire le pré-enrôlement en ligne pour la CNI ?` | `approved`, réponse venant du site idcam.cm, **source : document + page** |
+| `Quelles sont les pièces à fournir pour la CNI ?` | `approved`, avec les pièces du document |
+| `Quel est le score du match de foot ?` | `refused` (hors sujet), aucune source, **une lacune enregistrée** |
+| `Mon numéro de téléphone est 699123456, où retirer ma CNI ?` | `partial` ou `refused`, le numéro n'apparaît ni dans la réponse ni dans le journal |
+
+La réponse contient `request_id`, `status`, `answer`, `sources`. Avec ce `request_id`, on voit **le travail de chaque tâche** :
+
+```bash
+curl -s http://127.0.0.1:8000/audit/REQ-XXXXXXXX-XXXXXX | python -m json.tool
+```
+
+| Champ de l'audit | Produit par | À regarder |
+|---|---|---|
+| `routing_json` | **T1** | `intent`, `domain`, `subdomain`, `agents` |
+| `agent_outputs_json` | **T2** | `answer_draft` avec renvois `[1]`, `citations`, `retrieval.top_score`, `retrieval.passages` |
+| `validation_json` | **T3** | `status`, `checks` (grounded, has_citations, score_ok, no_sensitive_data), `gaps` |
+| `status`, `final_answer`, `duration_ms`, `error` | **T4** | l'enregistrement final, le temps, l'erreur d'étape s'il y en a une |
+
+Les **lacunes** (ce que la base ne sait pas, donc quels documents ajouter) : `curl -s http://127.0.0.1:8000/gaps`.
+
+## P3.4 En cas d'erreur : quelle tâche est responsable ?
+
+| Ce qu'on observe | Tâche à examiner |
+|---|---|
+| Réponse avec `DOC-EXEMPLE-CNI` | **T4** : lancée sans le lanceur, donc avec les faux (P3.2) |
+| `routing_json` : `hors_sujet`, `agents: []` pour une vraie question | **T1** : mots-clés de routage trop étroits |
+| `error` : « T2 (agents) … » ou `agent_outputs_json` avec `meta.kind = error` | **T2** : recherche impossible (index absent ou mauvaise dimension) ou LLM non configuré |
+| `agent_outputs_json` correct mais `validation_json` refuse ou retire des phrases | **T3** : voir `checks` et `gaps` pour la raison exacte |
+| `validation_json` correct mais mauvaise réponse à l'écran ou HTTP 503 | **T4** : API, audit ou interface |
+| Passages non pertinents dans `retrieval.passages` | **Partie 2** (T3 découpage ou T4 vectorisation), pas la Partie 3 |
+
+Chaque étape est validée par T4 contre son contrat : en cas d'écart, le message nomme la tâche et le champ fautif.
+
+## P3.5 Points relevés pendant la fusion (à traiter par leurs auteurs)
+
+1. **T1 : routage trop étroit.** Il reconnaît « CNI » et « carte nationale », mais pas « carte d'identité » seul : `Où retirer ma carte d'identité ?` est classé `hors_sujet`, sans agent, donc la réponse est un refus alors que le document contient l'information.
+2. **T1 : `Bonjour` est marqué `needs_clarification: true`.** T4 répond alors « Pouvez-vous préciser votre question ? » au lieu d'un accueil.
+3. **T3 : masquage des lacunes.** Avec un numéro de téléphone dans la question, le sujet de la lacune devient `... [donnée masquée]asquée], ...` : deux détections (téléphone et numéro de CNI) se recouvrent sur les mêmes chiffres et sont remplacées deux fois. Le numéro n'est pas révélé, mais le texte est abîmé. À corriger en fusionnant les zones qui se chevauchent dans `masquer` (`guardrails/sensitive.py`).
+4. **T3 : seuil de score 0,35 non calibré** sur bge-m3. À régler sur les 10 vraies questions du test de bout en bout (guide, slide 8), en regardant `retrieval.top_score` dans l'audit.
+5. **LLM non choisi** (P3.1) et **OCR absent** (PDF scannés), déjà signalé pour la Partie 2.
+
+---
+
 *Les changements faits pendant la fusion sont listés dans `NOTES_FUSION.md`.*
+

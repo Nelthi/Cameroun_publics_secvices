@@ -18,3 +18,8 @@ faiss-cpu>=1.8.0,<2.0
 
 # Tests
 pytest>=8.0,<10.0
+
+# Phase 3 — T2 agents (httpx déjà listé), T4 API + interface
+pydantic>=2.0,<3.0
+streamlit>=1.30
+requests>=2.31,<3.0

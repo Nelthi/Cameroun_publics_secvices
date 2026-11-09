@@ -1,0 +1,14 @@
+{
+  "question": "Quels documents dois-je apporter pour ma première CNI ?",
+  "language": "fr",
+  "routing_plan": {
+    "request_id": "REQ-20261106-0001",
+    "intent": "procedure",
+    "domain": "public_services",
+    "subdomain": "national_identity_card",
+    "agents": [
+      "procedure"
+    ],
+    "needs_clarification": false
+  }
+}
